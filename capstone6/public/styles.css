@@ -1,0 +1,201 @@
+/* Import Google Font */
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap');
+
+:root {
+    --primary-color: #2E8B57;  /* Sea Green */
+    --secondary-color: #A3C293; /* Soft Olive Green */
+    --accent-color: #C5E1A5; /* Light Green */
+    --background-color: #F0FFF0; /* Honeydew Green */
+    --text-color: #2F4F4F; /* Dark Slate Gray */
+    --light-text: #6B8E23; /* Olive Drab */
+    --border-radius: 8px;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+}
+
+/* Basic Page Styling */
+body {
+    background-color: var(--background-color);
+    color: var(--text-color);
+    padding: 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+/* Header */
+h1 {
+    font-size: 2.2rem;
+    font-weight: 600;
+    margin-bottom: 15px;
+    color: var(--primary-color);
+    text-align: center;
+}
+
+/* Centered Add Book Button */
+.add-book-container {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    margin-bottom: 15px;
+}
+
+.btn-primary {
+    background-color: var(--primary-color);
+    color: white;
+    padding: 10px 18px;
+    font-size: 1rem;
+    font-weight: bold;
+    text-transform: uppercase;
+    border-radius: var(--border-radius);
+    border: none;
+    cursor: pointer;
+    transition: background 0.3s ease-in-out;
+}
+
+.btn-primary:hover {
+    background-color: var(--secondary-color);
+}
+
+/* Edit & Delete Buttons Container */
+.book-actions {
+    display: flex;
+    flex-direction: column; /* Align edit below delete */
+    gap: 4px;
+}
+
+/* Smaller Edit & Delete Buttons */
+.btn-edit, .btn-danger {
+    padding: 6px 10px; /* Smaller padding */
+    font-size: 0.8rem;
+    border-radius: 6px;
+    text-decoration: none;
+    font-weight: bold;
+    border: none;
+}
+
+/* Edit Button (Green Theme, Slightly Lower) */
+.btn-edit {
+    background-color: var(--primary-color);
+    color: white;
+    margin-top: 4px; /* Push edit button slightly down */
+}
+
+.btn-edit:hover {
+    background-color: var(--secondary-color);
+}
+
+/* Delete Button (Earthy Red) */
+.btn-danger {
+    background-color: #B22222;
+    color: white;
+}
+
+.btn-danger:hover {
+    background-color: #8B0000;
+}
+
+/* Book List Container */
+.book-list {
+    width: 90%;
+    max-width: 750px;
+    background: white;
+    border-radius: var(--border-radius);
+    padding: 20px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+    margin-top: 20px;
+}
+
+/* Book Item Styling */
+.book-item {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    padding: 12px;
+    border-bottom: 1px solid #ddd;
+    background: white;
+    border-radius: var(--border-radius);
+    transition: background 0.3s ease-in-out;
+    flex-wrap: wrap;
+}
+
+.book-item:hover {
+    background: var(--accent-color);
+}
+
+/* Book Title */
+.book-item h2 {
+    font-size: 1.2rem;
+    color: var(--primary-color);
+    margin: 0;
+}
+
+/* Notes/Description Visibility (Fixed) */
+.book-item .book-notes {
+    font-size: 1rem; /* Larger text */
+    color: #1C3D18; /* Dark Green for better contrast */
+    background-color: #E8F5E9; /* Light green background */
+    padding: 8px 12px; /* More padding for visibility */
+    border-radius: 6px;
+    font-weight: 500;
+    width: 100%; /* Ensures it takes full space */
+    margin-top: 5px; /* Adds space from the title */
+}
+
+/* Form Styling */
+form {
+    background: white;
+    padding: 20px;
+    border-radius: var(--border-radius);
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+    width: 100%;
+    max-width: 450px;
+    margin: auto;
+}
+
+form label {
+    font-size: 1rem;
+    font-weight: 600;
+    color: var(--primary-color);
+}
+
+form input, form textarea {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 8px;
+    border: 1px solid #ccc;
+    border-radius: var(--border-radius);
+    font-size: 1rem;
+}
+
+form input:focus, form textarea:focus {
+    outline: none;
+    border-color: var(--primary-color);
+    box-shadow: 0 0 5px rgba(46, 139, 87, 0.3);
+}
+
+/* Footer */
+.footer {
+    margin-top: 35px;
+    font-size: 0.9rem;
+    color: var(--light-text);
+}
+
+/* Responsive Design */
+@media (max-width: 600px) {
+    .book-list {
+        width: 100%;
+        padding: 15px;
+    }
+
+    .book-item {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+}

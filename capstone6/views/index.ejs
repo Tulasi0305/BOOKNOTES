@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Book Notes</title>
+    <link rel="stylesheet" href="/styles.css">
+</head>
+<body>
+
+    <h1>My Book Notes 📚</h1>
+
+    <!-- Add Book Form -->
+    <form action="/add" method="POST">
+        <input type="text" name="title" placeholder="Book Title" required>
+        <input type="text" name="author" placeholder="Author" required>
+        <textarea name="notes" placeholder="Notes"></textarea>
+        <input type="number" name="rating" placeholder="Rating (1-10)" required>
+        <input type="date" name="dateRead" required>
+        <button type="submit" class="btn-primary">Add Book</button>
+    </form>
+
+    <!-- Book List -->
+    <div class="book-list">
+        <% books.forEach((book) => { %>
+            <div class="book-item">
+                <div>
+                    <h2><%= book.title %></h2>
+                    <p>by <%= book.author %></p>
+                    <p><strong>Notes:</strong> <%= book.notes %></p>
+                    <p><strong>Rating:</strong> <%= book.rating %>/10</p>
+                    <p><strong>Read on:</strong> <%= book.dateRead.toDateString() %></p>
+                </div>
+                <!-- Edit & Delete Buttons -->
+                <div class="book-actions">
+                    <a href="/edit/<%= book._id %>" class="btn-edit">Edit</a>
+                    <form action="/delete/<%= book._id %>" method="POST">
+                        <button type="submit" class="btn-danger">Delete</button>
+                    </form>
+                </div>
+            </div>
+        <% }); %>
+    </div>
+
+    <footer class="footer">© 2025 My Book Notes</footer>
+</body>
+</html>
